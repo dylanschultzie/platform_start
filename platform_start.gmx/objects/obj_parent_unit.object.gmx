@@ -31,6 +31,7 @@ horizontal_speed = 0;
 vertical_speed = 0;
 jump_speed = 7;
 move_speed = 4;
+unit_direction = 1;
 </string>
           </argument>
         </arguments>
