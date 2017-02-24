@@ -63,11 +63,11 @@ if( place_meeting( x+horizontal_speed, y, obj_wall))
 
 if( horizontal_speed &gt; 0 )
 {
-    unit_direction = -1;
+    unit_direction = 1;
 }
 else if( horizontal_speed &lt; 0 )
 {
-    unit_direction = 1;
+    unit_direction = -1;
 }
 image_xscale = unit_direction;
 x += horizontal_speed;
@@ -108,7 +108,7 @@ y += vertical_speed
 bullet = instance_create(x, y, obj_bullet)
 bullet.direction = image_angle;
 bullet.image_angle = image_angle;
-bullet.speed = 10;
+bullet.speed = 10 * image_xscale;
 bullet.image_xscale = image_xscale;
 </string>
           </argument>
