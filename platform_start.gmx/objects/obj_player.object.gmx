@@ -61,20 +61,22 @@ key_jump = keyboard_check_pressed(vk_space);
 //react to inputs
 move = key_left + key_right;
 horizontal_speed = move * move_speed;
-if( vertical_speed &lt; 10 )
-{
-    vertical_speed += grav; 
-}
-    
-if( place_meeting( x, y+1, obj_wall))
-{
-    vertical_speed = key_jump * -jump_speed;
-}
 
 //fall collision
 if( place_meeting( x, y+vertical_speed, obj_fall))
 {
     room_goto(rm_game_over)
+}
+
+if( place_meeting( x, y+1, obj_wall))
+{
+    vertical_speed = key_jump * -jump_speed;
+}
+
+///basic collision
+if( vertical_speed &lt; 10 )
+{
+    vertical_speed += grav; 
 }
 
 //horizontal collision
