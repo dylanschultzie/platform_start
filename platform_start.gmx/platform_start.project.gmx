@@ -6,12 +6,14 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_stand</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_fall</sprite>
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_air</sprite>
+    <sprite>sprites\spr_run</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_game_over</background>
@@ -19,6 +21,27 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_menu.gml</script>
+    <scripts name="state_machine">
+      <script>scripts\state_cleanup.gml</script>
+      <script>scripts\state_create.gml</script>
+      <script>scripts\state_execute.gml</script>
+      <script>scripts\state_init.gml</script>
+      <script>scripts\state_machine_init.gml</script>
+      <script>scripts\state_switch.gml</script>
+      <script>scripts\state_switch_previous.gml</script>
+      <script>scripts\state_update.gml</script>
+    </scripts>
+    <scripts name="player">
+      <script>scripts\scr_player_air.gml</script>
+      <script>scripts\scr_player_run.gml</script>
+      <script>scripts\scr_player_stand.gml</script>
+    </scripts>
+    <scripts name="helpers">
+      <script>scripts\approach.gml</script>
+      <script>scripts\draw_set_text_alignment.gml</script>
+      <script>scripts\place_meeting_rounded.gml</script>
+      <script>scripts\position_meeting_rounded.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_menu</font>
