@@ -31,7 +31,7 @@ else
 
 if(!place_meeting_rounded(x,y+1,obj_wall))
 {
-//    state_switch("Air");
+    state_switch("Air");
 }
 
 if(place_meeting_rounded(x+x_speed,y,obj_wall))

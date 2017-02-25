@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_parent_unit</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize variables
+            <string>///Properties
+grav=.25;
+max_grav=10;
+stick_to_ground=false;
 x_speed = 0;
 y_speed = 0;
 
@@ -33,9 +36,18 @@ walk_max = 2;
 walk_acceleration = .1;
 
 run_max = 4;
-run_accelereation = .2;
+run_acceleration = .2;
 
-jump_strength = 5;
+//Air Control
+air_control_enabled=true;
+air_x_accel=walk_acceleration; //How easy is it to move in the air.
+jump_strength=5;
+jump_hold_limit=15;
+
+//General Helpers
+timer=0;
+
+scale=1;
 </string>
           </argument>
         </arguments>
@@ -156,6 +168,7 @@ run_held=keyboard_check(vk_shift)
 jump_pressed=keyboard_check_pressed(vk_space);
 jump_held=keyboard_check(vk_space);
 jump_released=keyboard_check_released(vk_space);
+
 </string>
           </argument>
         </arguments>

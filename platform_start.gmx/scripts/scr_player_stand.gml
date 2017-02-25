@@ -20,7 +20,7 @@ if(jump_pressed)
     y_speed -= jump_strength;
 }
 
-if(!position_meeting_rounded(x, y-1, obj_wall))
+if(!place_meeting_rounded(x, y+1, obj_wall))
 {
-//    state_switch("Air");
+    state_switch("Air");
 }
