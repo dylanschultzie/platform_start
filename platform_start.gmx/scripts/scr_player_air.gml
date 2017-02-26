@@ -27,12 +27,17 @@ if(jump_released)
 //Apply Gravity
 y_speed=min(y_speed+grav,max_grav);
 
+if(place_meeting_rounded(x, y+y_speed, obj_fall))
+{
+    room_goto(rm_game_over);
+}
+
 //Basic Vertical Collision Checking
-if(place_meeting_rounded(x,y+y_speed,obj_wall))
+if(place_meeting_rounded(x, y+y_speed, obj_wall))
 {   //Snap to floor
     x=round(x);
     y=round(y);
-    while(!place_meeting_rounded(x,y+sign(y_speed),obj_wall))
+    while(!place_meeting_rounded(x, y+sign(y_speed), obj_wall))
         y+=sign(y_speed);
     y_speed=0;
     state_var[0]=false;
@@ -58,17 +63,17 @@ if(key_right||key_left)
 {
     if(key_right-key_left != 0)
         image_xscale=key_right-key_left;
-    x_speed=approach(x_speed,run_max*(key_right-key_left),run_acceleration)//x_speed+=(key_right-key_left)*run_accel;
+    x_speed=approach(x_speed, run_max * (key_right-key_left), run_acceleration)//x_speed+=(key_right-key_left)*run_accel;
 }
 
 ///check for horizontal collision
 if(x_speed != 0)
 {
-    if(place_meeting_rounded(x+x_speed,y,obj_wall))
+    if(place_meeting_rounded(x+x_speed, y, obj_wall))
     {
         x=round(x);
         y=round(y);
-        while(!place_meeting_rounded(x+sign(x_speed),y,obj_wall))
+        while(!place_meeting_rounded(x+sign(x_speed), y, obj_wall))
         {
             x+=sign(x_speed);
         }
