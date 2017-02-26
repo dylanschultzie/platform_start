@@ -7,6 +7,13 @@ if(state_new)
 
 if( place_meeting_rounded(x+x_speed, y, obj_parent_enemy) )
 {
+    x=round(x);
+    y=round(y);
+    while(!place_meeting_rounded(x+sign(x_speed),y,obj_parent_enemy))
+    {
+        x+=sign(x_speed);
+    }
+    x_speed=0;
     state_switch("Hit", obj_parent_enemy.damage)
 }
 
@@ -41,7 +48,7 @@ if(!place_meeting_rounded(x,y+1,obj_wall))
     state_switch("Air");
 }
 
-if(place_meeting_rounded(x+x_speed,y,obj_wall))
+if(place_meeting_rounded(x+x_speed, y, obj_wall))
 {
     x=round(x);
     y=round(y);

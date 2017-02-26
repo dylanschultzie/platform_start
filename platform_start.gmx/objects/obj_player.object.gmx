@@ -219,6 +219,7 @@ state_execute();
             <string>draw_text(20,60,"State: "+string(state_name)
                +"#x_speed: "+string(x_speed)
                +"#Heath: "+string(health)
+               +"#x: "+string(x)+", y: " + string(y)
          );
 
 </string>
