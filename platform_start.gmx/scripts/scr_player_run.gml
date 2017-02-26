@@ -5,12 +5,19 @@ if(state_new)
     image_index = 1;
 }
 
+if( place_meeting_rounded(x+x_speed, y, obj_parent_enemy) )
+{
+    state_switch("Hit", obj_parent_enemy.damage)
+}
+
 if( key_left || key_right )
 {
-    x_speed=approach(x_speed,run_max*(key_right-key_left),walk_acceleration);
+    //speed up
+    x_speed=approach(x_speed, run_max * (key_right-key_left), walk_acceleration);
 }
 else
-{
+{   
+    //slow down
     x_speed=approach(x_speed,0,walk_acceleration);
 }
 

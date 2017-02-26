@@ -31,6 +31,7 @@ max_grav=10;
 stick_to_ground=false;
 x_speed = 0;
 y_speed = 0;
+health = 3;
 
 walk_max = 2;
 walk_acceleration = .1;
@@ -104,9 +105,10 @@ jump_released=false;
 state_machine_init();
 
 //Define States
-state_create("Stand",scr_player_stand);
-state_create("Run",scr_player_run);
-state_create("Air",scr_player_air);
+state_create("Stand", scr_player_stand);
+state_create("Run", scr_player_run);
+state_create("Air", scr_player_air);
+state_create("Hit", scr_player_hit);
 
 //Set the default state
 state_init("Stand");
@@ -214,8 +216,9 @@ state_execute();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(20,20,"State: "+string(state_name)
-              +"#x_speed: "+string(x_speed)
+            <string>draw_text(20,60,"State: "+string(state_name)
+               +"#x_speed: "+string(x_speed)
+               +"#Heath: "+string(health)
          );
 
 </string>

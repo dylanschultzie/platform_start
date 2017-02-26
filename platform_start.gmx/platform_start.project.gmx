@@ -35,6 +35,7 @@
       <script>scripts\scr_player_air.gml</script>
       <script>scripts\scr_player_run.gml</script>
       <script>scripts\scr_player_stand.gml</script>
+      <script>scripts\scr_player_hit.gml</script>
     </scripts>
     <scripts name="helpers">
       <script>scripts\approach.gml</script>
