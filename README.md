@@ -18,3 +18,11 @@ Had working, but are no longer due to adding state machines:
 * jumping
 * death
 * shooting bullets
+
+Things I want to do:
+* Wall jumping 
+* Double jumping
+* Powerups
+* Melee attacks
+* Visible health (enemy and player)
+* Visible ammo
